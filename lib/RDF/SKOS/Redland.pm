@@ -15,7 +15,7 @@ use RDF::Redland::Query;
 
 =head1 NAME
 
-RDF::SKOS::Redland - SKOS based on RDF::Redland
+RDF::SKOS::Redland - SKOS - RDF::Redland based implementation
 
 =head1 SYNOPSIS
 
@@ -40,6 +40,30 @@ this is reflected in the underlying RDF graph.
 =head2 Concept Identification
 
 Of course, being in the RDF world, concepts are identified via their URI (IRI, whatever).
+
+=head2 Annoyances
+
+=over
+
+=item
+
+You will get a STDERR warning:
+
+  C<Redland warning: Variable a was selected but is unused in the query.>
+
+That is harmless, but cause of the incomplete implementation of SPARQL on
+top of Redland. Maybe I find a trick of working around, or maybe drop SPARQL
+alltogether.
+
+=item
+
+With some versions of Redland you may get
+
+  C<1/0Name "swig_runtime_data::type_pointer3 ....>
+
+Not sure what this is caused by.
+
+=back
 
 =head1 INTERFACE
 

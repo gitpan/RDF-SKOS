@@ -5,7 +5,7 @@ use warnings;
 
 =head1 NAME
 
-RDF::SKOS::Scheme - SKOS Scheme Class
+RDF::SKOS::Scheme - SKOS - Concept Scheme Class
 
 =head1 SYNOPSIS
 

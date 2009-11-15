@@ -5,7 +5,7 @@ use warnings;
 
 =head1 NAME
 
-RDF::SKOS::Concept - SKOS Concepts
+RDF::SKOS::Concept - SKOS - Concept Class
 
 =head1 SYNOPSIS
 

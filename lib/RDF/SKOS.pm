@@ -40,15 +40,14 @@ RDF::SKOS - SKOS - Simple Knowledge Organization System
     @labels = $c->changeNotes;
 
     # broader/narrower
-  
-    $c->narrower
-    $c->narrowerTransitive
-    $c->broader
-    $c->broaderTransitive
+    @cs = $c->narrower
+    @cs = $c->narrowerTransitive
+    @cs = $c->broader
+    @cs = $c->broaderTransitive
 
-    $c->related
-    $c->relatedTransitive
-
+    # associated
+    @cs = $c->related
+    @cs = $c->relatedTransitive
 
     # get all schemes
     @ss = $skos->schemes
@@ -60,12 +59,16 @@ RDF::SKOS - SKOS - Simple Knowledge Organization System
 
 =head1 DESCRIPTION
 
+!!! DEVELOPER RELEASE (THERE MAY BE DRAGONS) !!!
+
+!!! PLEASE SEE THE README FOR LIMITATIONS    !!!
+
 SKOS is a model for expressing very basic concept schemes, much simpler than Topic Maps or RDF. This
 includes subject headings, taxonomies, folksonomies. For a primer see
 
 =begin html
 
-http://www.w3.org/TR/skos-primer/
+<a href="http://www.w3.org/TR/skos-primer/">SKOS Primer</a>
 
 =end html
 
@@ -113,6 +116,10 @@ There is also no support for collections yet.
 =item
 
 And none for all *Match relationships between concepts.
+
+=item
+
+And most of the SKOS constraints are not yet honored.
 
 =back
 
@@ -247,6 +254,8 @@ scalars.
 
 =item B<prefLabels>
 
+Returns the list of preferred labels.
+
 =cut
 
 sub prefLabels {
@@ -259,6 +268,8 @@ sub prefLabels {
 =pod
 
 =item B<altLabels>
+
+Returns the list of alternative labels.
 
 =cut
 
@@ -273,6 +284,8 @@ sub altLabels {
 
 =item B<hiddenLabels>
 
+Returns the list of hidden labels.
+
 =cut
 
 sub hiddenLabels {
@@ -285,6 +298,10 @@ sub hiddenLabels {
 =pod
 
 =item B<notes>
+
+Returns the list of notes.
+
+B<NOTE>: No property subclassing is honored, so scopeNotes are NOT included (yet).
 
 =cut
 
@@ -299,6 +316,8 @@ sub notes {
 
 =item B<scopeNotes>
 
+Returns the list of scope notes.
+
 =cut
 
 sub scopeNotes {
@@ -311,6 +330,8 @@ sub scopeNotes {
 =pod
 
 =item B<definitions>
+
+Returns the list of definitions.
 
 =cut
 
@@ -325,6 +346,8 @@ sub definitions {
 
 =item B<examples>
 
+Returns the list of examples.
+
 =cut
 
 sub examples {
@@ -337,6 +360,8 @@ sub examples {
 =pod
 
 =item B<historyNotes>
+
+Returns the list of history notes.
 
 =cut
 
@@ -351,6 +376,8 @@ sub historyNotes {
 
 =item B<editorialNotes>
 
+Returns the list of editorial notes.
+
 =cut
 
 sub editorialNotes {
@@ -363,6 +390,8 @@ sub editorialNotes {
 =pod
 
 =item B<changeNotes>
+
+Returns the list of change notes.
 
 =cut
 
@@ -501,7 +530,7 @@ itself.
 
 =cut
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 "against all odds";
 

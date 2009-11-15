@@ -1,6 +1,6 @@
 ---
 name: RDF-SKOS
-version: 0.02
+version: 0.03
 author:
   - 'Robert Barta <drrho@cpan.org>'
 abstract: 'SKOS - Simple Knowledge Organization System'
@@ -8,6 +8,7 @@ license: perl
 resources:
   license: http://dev.perl.org/licenses/
 build_requires:
+  RDF::Redland: 0
   Test::More: 0
   Test::Pod: 0
   Test::Pod::Coverage: 0
@@ -15,7 +16,7 @@ build_requires:
 provides:
   RDF::SKOS:
     file: lib/RDF/SKOS.pm
-    version: 0.02
+    version: 0.03
   RDF::SKOS::Concept:
     file: lib/RDF/SKOS/Concept.pm
     version: 0.01

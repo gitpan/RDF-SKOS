@@ -10,6 +10,18 @@ out there. Here nothing of the RDFishness is visible, but there is
 also an implementation on top of RDF::Redland. Others can be added via
 subclassing.
 
+Current Limitations (this is work in progress)
+
+  - no concept matching facilities
+  - only read-only
+  - no collections
+
+Other TODOs:
+
+  - follow all property subsumptions from the reference
+  - follow all the entailments from the reference
+
+
 INSTALLATION
 
 To install this module, run the following commands:

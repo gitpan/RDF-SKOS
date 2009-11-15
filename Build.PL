@@ -12,6 +12,7 @@ my $builder = Module::Build->new(
 	'Text::CSV_XS' => 0,
 	'Test::Pod::Coverage' => 0,
 	'Test::Pod' => 0,
+	'RDF::Redland' => 0,
     },
     add_to_cleanup      => [ 'RDF-SKOS-*' ],
     create_makefile_pl => 'traditional',

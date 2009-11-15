@@ -5,6 +5,7 @@ WriteMakefile
           'NAME' => 'RDF::SKOS',
           'VERSION_FROM' => 'lib/RDF/SKOS.pm',
           'PREREQ_PM' => {
+                           'RDF::Redland' => 0,
                            'Test::More' => 0,
                            'Test::Pod' => 0,
                            'Test::Pod::Coverage' => 0,
